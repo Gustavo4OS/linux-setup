@@ -106,7 +106,12 @@ def handle_event(*args):
 def update_message():
     global players, current_player,player_names, message, display_text, message_display_len, display_suffix, last_player_name
 
-    if len(players) != 0:
+def update_message():
+    global players, current_player,player_names, message, display_text, message_display_len, display_suffix, last_player_name
+    if len(players) == 0:
+        tmp_message = "No player available"
+        update_prefix_suffix()
+    else:
         name = get_name_by_index(current_player)
         status = get_status(players[current_player])
         metadata_obj = get_metadata(players[current_player])
@@ -120,7 +125,7 @@ def update_message():
             metadata_string_list.append(str(result))
         metadata_string = (" "+metadata_separator+" ").join(metadata_string_list)
         if visual_len(metadata_string) > message_display_len:
-            metadata_string = "" + metadata_string + ""
+            metadata_string = " " + metadata_string + " |"
         update_prefix_suffix(name,status)
         tmp_message = ""
         if metadata_string:
