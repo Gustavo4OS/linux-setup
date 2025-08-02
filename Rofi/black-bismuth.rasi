@@ -1,0 +1,83 @@
+// >>> BlackBismuth made by gustavo4OS <<<
+
+configuration {
+	display-drun: "search:";
+	font: "Hack Nerd font 13";
+	modi: "drun";
+	show-icons: false;
+}
+
+@theme "/dev/null"
+
+
+* {
+	bg: 	#0a0b0c;
+	bg-alt: #ffffff;
+	
+	fg: 	#ffffff;
+	fg-alt: #0a0b0c;
+	
+	background-color: @bg;
+	text-color :@fg;
+
+}
+
+window {
+	
+	background-color: @bg;	
+	text-color: @fg;
+
+	width: 350px;
+	height: 380px;
+	
+	border: 1px;
+	border-color: @bg-alt;
+	border-radius: 10px;
+
+}
+
+inputbar {
+
+	children: [prompt, entry];	
+	
+	background-color: @bg;
+	text-color: @fg;
+
+
+	margin: 10px;
+}
+
+prompt {
+	backgroud-color: @bg;
+}
+
+entry {
+	
+	background-color: @bg; 	
+	text-color: @fg;
+
+	padding: 0px 5px;
+
+}
+
+element {
+	background-color: @bg;
+	text-color: @fg;
+	padding:10px;
+}
+
+element selected {
+
+	background-color: @bg-alt;
+	text-color: @fg-alt;
+
+}
+
+
+element-text {
+
+	background-color: inherit;
+	text-color: inherit;
+
+}
+
