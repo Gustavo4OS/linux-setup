@@ -1,0 +1,45 @@
+# Windows 95 Color Scheme
+# To have the authentic experience in Chicago95 GTK Theme.
+
+[font]
+size = 13.0
+
+[window]
+padding.x = 14
+padding.y = 14
+opacity = 0.85
+
+[font.normal]
+family = "Hack nerd font"
+style = "Regular"
+
+[font.bold]
+family = "Hack nerd font"
+style = "Bold"
+
+# Default colors
+[colors.primary]
+background = '#000000'
+foreground = '#ffffff'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#ffeeee'
+green   = '#339966'
+yellow  = '#ffffff'
+blue    = '#C0C7C8'
+magenta = '#ffeeee'
+cyan    = '#00A8A8'
+white   = '#A8A8A8'
+
+# Bright colors
+[colors.bright]
+black   = '#cccccc'
+red     = '#ffeeee'
+green   = '#54FC54'
+yellow  = '#ffffff'
+blue    = '#C0C7C8'
+magenta = '#ffeeee'
+cyan    = '#CAE5EB'
+white   = '#FFFFFF'
