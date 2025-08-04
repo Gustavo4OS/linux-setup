@@ -71,7 +71,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+slash split h
 bindsym $mod+period split v
 
-bindsym $mod+f fullscreen toggle
+bindsym Control+Shift+f fullscreen toggle
 
 bindsym Control+Shift+space floating toggle
 
@@ -119,9 +119,9 @@ for_window [instance="pcmanfm"] floating enable
 for_window [instance="gedit"] floating enable
 
 bindsym $mod+Return exec alacritty
+bindsym $mod+f exec firefox
 bindsym $mod+w exec pcmanfm
 bindsym $mod+p exec gedit
 
 bindsym $mod+r mode "resize"
 bindsym mod1+Tab exec setxkbmap -option caps:none -query | grep us && setxkbmap -layout br || setxkbmap -layout us
-
