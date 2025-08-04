@@ -32,7 +32,7 @@ window {
 	
 	border: 1px;
 	border-color: @bg-alt;
-	border-radius: 10px;
+	border-radius: 0px;
 
 }
 
