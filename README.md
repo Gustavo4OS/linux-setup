@@ -1,5 +1,6 @@
 # linux-setup
 <img width="1920" height="1080" alt="Screenshot 2025-08-06 08-20-20" src="https://github.com/user-attachments/assets/4bfe3922-4554-4fe6-9472-686166ee2991" />
+
 # • Specs:
 
 Power Supply: Nidus 500w
