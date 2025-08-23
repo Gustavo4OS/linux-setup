@@ -7,11 +7,6 @@ set smarttab
 set mouse=a
 set ttymouse=xterm2
 
-autocmd VimEnter * NERDTree | wincmd p
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
-
 set fillchars-=vert:\|
 set fillchars+=vert:\ 
 hi! VertSplit ctermfg=232 ctermbg=232
