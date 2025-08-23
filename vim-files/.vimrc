@@ -11,14 +11,19 @@ set fillchars-=vert:\|
 set fillchars+=vert:\ 
 hi! VertSplit ctermfg=232 ctermbg=232
 
-colorscheme dark_pastel_red
+colorscheme colorless
 
-nnoremap <C-f> :NERDTreeToggle<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 inoremap <C-d> <Left>
 inoremap <C-f> <Right>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
+
+nnoremap <C-d> <Left>
+nnoremap <C-f> <Right>
+nnoremap <C-j> <Down>
+nnoremap <C-k> <Up>
 
 inoremap "" ""<Left>
 inoremap () ()<Left>
