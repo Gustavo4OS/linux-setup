@@ -1,0 +1,128 @@
+set $mod mod4
+
+font pango:monospace 8
+
+# >>>>>>> Crucial Startup <<<<<<<
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id /usr/lib/gsd-xsettings
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xrandr -r 75.00
+exec_always --no-startup-id polybar
+#exec_always --no-startup-id picom
+
+# pactl to adjust system volume
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+floating_modifier $mod
+
+tiling_drag modifier titlebar
+
+bindsym $mod+Shift+q kill
+
+bindsym Control+mod1+h exec rofi -show drun
+
+# >>>>>>>> i3 Gaps Config <<<<<<<<
+
+gaps inner 5
+gaps top 26
+gaps bottom 0
+gaps right 0
+gaps left 0
+# >>>>>>>> Border Config <<<<<<<<<
+
+default_border pixel 1
+default_floating_border pixel 1
+
+#boder colors           border  backgr. text    indicator color_border
+client.focused          #9a9a9a #9a9a9a #9a9a9a #9a9a9a   #9a9a9a
+client.focused_inactive #484848 #484848 #484848 #484848   #484848
+client.unfocused        #484848 #484848 #484848 #484848   #484848
+
+# >>> container focus <<<
+bindsym $mod+d focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+f focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+#--------------------------#
+
+# >>> move containers <<<
+bindsym $mod+Shift+d move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+f move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+#---------------------------------#
+
+bindsym Control+h split h
+bindsym Control+g split v
+
+bindsym F11 fullscreen toggle
+
+bindsym Control+Shift+space floating toggle
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+bindsym $mod+Shift+1 move container to workspace $ws1 
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+bindsym $mod+Shift+r restart
+
+mode "resize" {
+       
+         # same bindings, but for the arrow keys
+        bindsym f resize shrink width 1 px or 1 ppt
+        bindsym j resize grow height 1 px or 1 ppt
+        bindsym k resize shrink height 1 px or 1 ppt
+        bindsym d resize grow width 1 px or 1 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+# Open softwares
+for_window [instance="pcmanfm"] floating enable
+for_window [instance="gedit"] floating enable
+
+bindsym Print exec --no-startup-id maim "/home/$USER/Imagens/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Imagens/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Imagens/$(date)"
+
+bindsym $mod+Return exec alacritty
+bindsym mod1+f exec firefox
+bindsym $mod+w exec pcmanfm
+bindsym $mod+v exec gedit 
+
+bindsym $mod+r mode "resize"
+bindsym mod1+Tab exec setxkbmap -option caps:none -query | grep us && setxkbmap -layout br || setxkbmap -layout us
+
