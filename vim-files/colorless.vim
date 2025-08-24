@@ -1,10 +1,12 @@
-" dark pastel red theme for vim made by gustavo4OS :]
-let g:colors_name="dark_blue"
+" Colorless - By gustavo4OS - Thanks for Downloading! :]
+
+let g:colors_name="colorless"
 
 syntax on
 
 set cursorline
 set cursorlineopt=number
+
 let &t_SI = "\e[6 q" 
 let &t_SR = "\e[6 q" 
 let &t_EI = "\e[2 q" 
