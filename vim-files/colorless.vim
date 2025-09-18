@@ -5,13 +5,18 @@ let g:colors_name="colorless"
 syntax on
 
 set cursorline
-"comment the line below and remove the the comment from ctermbg to highlight the full leght of the current line:
+"comment the line below and remove the the comment from ctermbg to highlight the full leght of the current line
+
 set cursorlineopt=number
 hi! CursorLineNr cterm=NONE ctermfg=15 "ctermbg=233
 
 let &t_SI = "\e[6 q"
 let &t_SR = "\e[6 q"
 let &t_EI = "\e[2 q"
+
+set fillchars-=vert:\|
+set fillchars+=vert:\│
+hi! VertSplit ctermfg=0 ctermbg=234
 
 hi! Normal ctermbg=0
 hi! NonText ctermfg=0
