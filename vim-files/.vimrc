@@ -9,7 +9,7 @@ set ttymouse=xterm2
 
 set fillchars-=vert:\|
 set fillchars+=vert:\ 
-hi! VertSplit ctermfg=232 ctermbg=232
+hi! VertSplit ctermfg=0 ctermbg=234
 
 colorscheme colorless
 
@@ -32,7 +32,7 @@ inoremap {} {}<Left>
 inoremap <> <><Left>
 inoremap <C-_> /**/<Left><Left>
 
-let g:airline_theme='jellybeans'
+let g:airline_theme='apprentice'
 
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
@@ -63,4 +63,3 @@ let g:airline_symbols.linenr = ' line:'
 if filereadable(expand("~/.vimrc.plug"))
 	source ~/.vimrc.plug
 endif
-
