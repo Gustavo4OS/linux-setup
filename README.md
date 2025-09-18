@@ -19,7 +19,7 @@ RAM:T-force Group 8gb DDR4 2400mhz
 
 # • System:
 
-Kernel: 6.12.40_1
+Kernel: 6.16.7
 
 OS: Void Linux
 
@@ -33,11 +33,11 @@ Compositor: Picom Next
 
 # • System utilities:
 
-Rec/Screenshot: GPU screen recorder(ui)
+Rec/Screenshot: ffmpeg
 
-File Managers: Clifm, PcManFm
+File Managers: Clifm, Nemo
 
-Text Editors: Vim, Gedit
+Text Editors: Vim, Leafpad
 
 Web Browser: Firefox
 
