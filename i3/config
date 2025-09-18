@@ -29,8 +29,7 @@ bindsym $mod+Shift+q kill
 bindsym Control+mod1+h exec rofi -show drun
 
 # >>>>>>>> i3 Gaps Config <<<<<<<<
-
-gaps inner 5
+gaps inner 0
 gaps top 26
 gaps bottom 0
 gaps right 0
@@ -41,9 +40,9 @@ default_border pixel 1
 default_floating_border pixel 1
 
 #boder colors           border  backgr. text    indicator color_border
-client.focused          #9a9a9a #9a9a9a #9a9a9a #9a9a9a   #9a9a9a
-client.focused_inactive #484848 #484848 #484848 #484848   #484848
-client.unfocused        #484848 #484848 #484848 #484848   #484848
+client.focused          #454545 #454545 #454545 #454545   #454545
+client.focused_inactive #181818 #181818 #181818 #181818   #181818
+client.unfocused        #181818 #181818 #181818 #181818   #181818
 
 # >>> container focus <<<
 bindsym $mod+d focus left
@@ -69,8 +68,8 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 #---------------------------------#
 
-bindsym Control+h split h
-bindsym Control+g split v
+bindsym Control+mod1+v split h
+bindsym Control+mod1+g split v
 
 bindsym F11 fullscreen toggle
 
@@ -88,7 +87,7 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 
-bindsym $mod+Shift+1 move container to workspace $ws1 
+bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
@@ -97,7 +96,7 @@ bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+r restart
 
 mode "resize" {
-       
+
          # same bindings, but for the arrow keys
         bindsym f resize shrink width 1 px or 1 ppt
         bindsym j resize grow height 1 px or 1 ppt
@@ -111,18 +110,15 @@ mode "resize" {
 }
 
 # Open softwares
-for_window [instance="pcmanfm"] floating enable
-for_window [instance="gedit"] floating enable
-
 bindsym $mod+Shift+Print exec xfce4-screenshooter -w --no-border -S ~/Imagens/Screenshots
 bindsym Shift+Print exec xfce4-screenshooter -r -m -S ~/Imagens/Screenshots/
 bindsym Print exec xfce4-screenshooter -f -m -S ~/Imagens/Screenshots/
 
 bindsym $mod+Return exec alacritty
 bindsym mod1+f exec firefox
-bindsym $mod+w exec pcmanfm
-bindsym $mod+v exec gedit 
+bindsym $mod+w exec nemo
 
 bindsym $mod+r mode "resize"
-bindsym mod1+Tab exec setxkbmap -option caps:none -query | grep us && setxkbmap -layout br || setxkbmap -layout us
+bindsym mod1+F1 exec ~/projects/devware/ffmpeg-profiler/bin
 
+bindsym mod1+Tab exec setxkbmap -query | grep us && setxkbmap -layout br || setxkbmap -layout us
