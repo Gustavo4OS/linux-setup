@@ -8,7 +8,7 @@ set mouse=a
 set ttymouse=xterm2
 
 set fillchars-=vert:\|
-set fillchars+=vert:\ 
+set fillchars+=vert:\│
 hi! VertSplit ctermfg=0 ctermbg=234
 
 colorscheme colorless
@@ -26,6 +26,7 @@ nnoremap <C-j> <Down>
 nnoremap <C-k> <Up>
 
 inoremap "" ""<Left>
+inoremap '' ''<Left>
 inoremap () ()<Left>
 inoremap [] []<Left>
 inoremap {} {}<Left>
