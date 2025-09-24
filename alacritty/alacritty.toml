@@ -5,9 +5,9 @@
 size = 13.0
 
 [window]
-padding.x = 14
-padding.y = 14
-opacity = 0.85
+padding.x = 0
+padding.y = 0
+opacity = 0.9
 
 [font.normal]
 family = "Hack nerd font"
