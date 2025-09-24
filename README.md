@@ -29,7 +29,7 @@ Themes:Gnome-icons, Arc-Dark
 
 Terminal: alacritty
 
-Compositor: Picom Next
+Compositor: Picom
 
 # • System utilities:
 
